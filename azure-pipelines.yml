@@ -22,3 +22,7 @@ jobs:
 - template: .azure-pipelines/dataConnectorValidations.yaml
 - template: .azure-pipelines/playbooksValidations.yaml
 - template: .azure-pipelines/sampleDataValidator.yaml
+
+- publish: $(build.artifactStagingDirectory)
+  displayName: 'Publish nuget packages to Artifacts'
+  artifact: PackageOutput
